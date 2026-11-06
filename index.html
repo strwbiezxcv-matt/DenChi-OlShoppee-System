@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DENCHI Olshoppe — Fashion, lifestyle, and indulgence</title>
+<meta name="description" content="Denchi Olshoppe — a curated selection of stylish clothing, handcrafted artisan foods and contemporary bags.">
+<meta name="theme-color" content="#141210">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141210'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23F6F2EC' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/views.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<noscript><style>.reveal, .anim { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+<!-- ===================== HEADER ===================== -->
+<header class="hdr" id="hdr" data-hdr>
+  <div class="hdr__bar wrap">
+    <div class="hdr__left">
+      <button class="iconbtn hdr__burger" type="button" data-open-menu aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="brand" href="#/home" aria-label="Denchi Olshoppe — home">
+        <span class="brand__mark" aria-hidden="true">D</span>
+        <span class="brand__name">Denchi</span>
+        <span class="brand__sub">Olshoppe</span>
+      </a>
+    </div>
+
+    <nav class="hdr__nav" aria-label="Primary">
+      <ul id="primary-nav"></ul>
+    </nav>
+
+    <div class="hdr__tools">
+      <button class="iconbtn" type="button" data-open-search aria-label="Search products">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      </button>
+      <button class="iconbtn hdr__wish" type="button" data-open-wishlist aria-label="Open wishlist">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.6-7 9-7 9Z"/></svg>
+        <span class="badge-dot" data-wish-count hidden>0</span>
+      </button>
+      <button class="iconbtn" type="button" data-open-cart aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge-dot" data-cart-count hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MOBILE NAV ===================== -->
+<div class="sheet" id="mobile-nav" data-sheet="menu" hidden>
+  <div class="sheet__panel sheet__panel--left" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="sheet__head">
+      <span class="brand__name">Denchi</span>
+      <button class="iconbtn" type="button" data-close-sheet aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav class="mobilenav" aria-label="Mobile"><ul id="mobile-nav-list"></ul></nav>
+    <div class="sheet__foot">
+      <a class="btn btn--outline btn--block" href="mailto:denchi.olshoppe@gmail.com">Contact Customer Care</a>
+    </div>
+  </div>
+  <div class="sheet__scrim" data-close-sheet></div>
+</div>
+
+<!-- ===================== SEARCH ===================== -->
+<div class="sheet" id="search-sheet" data-sheet="search" hidden>
+  <div class="sheet__panel sheet__panel--top" role="dialog" aria-modal="true" aria-label="Search products">
+    <div class="wrap searchbox">
+      <div class="searchbox__row">
+        <svg class="searchbox__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        <label class="sr-only" for="global-search">Search products</label>
+        <input id="global-search" type="search" placeholder="Search for denim, skirts, bags…" autocomplete="off">
+        <button class="iconbtn" type="button" data-close-sheet aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="searchbox__results" data-search-results></div>
+    </div>
+  </div>
+  <div class="sheet__scrim" data-close-sheet></div>
+</div>
+
+<!-- ===================== CART ===================== -->
+<div class="sheet" id="cart-sheet" data-sheet="cart" hidden>
+  <div class="sheet__panel sheet__panel--right" role="dialog" aria-modal="true" aria-labelledby="cart-h">
+    <div class="sheet__head">
+      <h2 class="sheet__title" id="cart-h">Your Cart <span data-cart-title-count></span></h2>
+      <button class="iconbtn" type="button" data-close-sheet aria-label="Close cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart" data-cart-body></div>
+    <div class="cart__foot" data-cart-foot></div>
+  </div>
+  <div class="sheet__scrim" data-close-sheet></div>
+</div>
+
+<!-- ===================== WISHLIST ===================== -->
+<div class="sheet" id="wish-sheet" data-sheet="wishlist" hidden>
+  <div class="sheet__panel sheet__panel--right" role="dialog" aria-modal="true" aria-labelledby="wish-h">
+    <div class="sheet__head">
+      <h2 class="sheet__title" id="wish-h">Wishlist <span data-wish-title-count></span></h2>
+      <button class="iconbtn" type="button" data-close-sheet aria-label="Close wishlist">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart" data-wish-body></div>
+  </div>
+  <div class="sheet__scrim" data-close-sheet></div>
+</div>
+
+<!-- ===================== QUICK VIEW ===================== -->
+<div class="sheet" id="quick-sheet" data-sheet="quick" hidden>
+  <div class="sheet__panel sheet__panel--center" role="dialog" aria-modal="true" aria-labelledby="quick-h">
+    <button class="iconbtn sheet__close" type="button" data-close-sheet aria-label="Close quick view">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div data-quick-body></div>
+  </div>
+  <div class="sheet__scrim" data-close-sheet></div>
+</div>
+
+<!-- ===================== MAIN + FOOTER ===================== -->
+<main id="main" tabindex="-1"></main>
+<footer class="ftr" data-footer></footer>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/art.js" defer></script>
+<script src="assets/js/store.js" defer></script>
+<script src="assets/js/ui.js" defer></script>
+<script src="assets/js/views.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
