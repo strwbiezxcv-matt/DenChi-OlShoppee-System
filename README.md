@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DENCHI Olshoppe
 
 A rebuilt, redesigned Denchi Olshoppe storefront — fashion, lifestyle and
@@ -57,3 +58,7 @@ test.js               headless smoke tests (node test.js)
 * **Policies** — only FAQ has published content. The other policy pages are
   honest placeholders that route visitors to Customer Care rather than
   inventing legal or commercial terms.
+=======
+# DenChi-OlShoppee-System
+Denchi Olshoppe is more than a store—it’s a lifestyle destination. We bring together fashion and flavor to make every visit enjoyable and expressive.
+>>>>>>> c6914c92ad6992149ac38eb5b2970f9b810df0fc
